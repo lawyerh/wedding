@@ -1,0 +1,44 @@
+﻿@model raw_wedding.Models.Register
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="mx-auto">
+                <h2 class="alert alert-secondary d-inline-block">Get Married.com</h2>
+                <h2 class="alert alert-secondary d-inline-block mx-auto">Create an account to get married.</h2>
+                <form action="newUser" method="post">
+                    <div class="form-group">
+                        <label asp-for="Fname">First Name:</label>
+                        <span asp-validation-for="Fname"></span>
+                        <input type="text" asp-for="Fname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Lname">Last Name:</label>
+                        <span asp-validation-for="Lname"></span>
+                        <input type="text" asp-for="Lname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email:</label>
+                        <span asp-validation-for="Email"></span>
+                        @if(ViewBag.error != null)
+                        {
+                            <span>@ViewBag.error</span>
+                        }
+                        <input type="text" asp-for="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="pass">Password:</label>
+                        <span asp-validation-for="pass"></span>
+                        <input type="password" asp-for="pass" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="passmatch">Password Confirmation:</label>
+                        <span asp-validation-for="passmatch"></span>
+                        <input type="password" asp-for="passmatch" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg d-inline-block"> Create Account</button>
+                    <a href="/Login" class="btn btn-secondary btn-lg ml-3"> Login Instead</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
